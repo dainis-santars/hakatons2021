@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Kartes</title>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <title>Izotopi</title>
 </head>
 <body>
-    <h1 class="display-1"><i class="bi bi-map"></i>&nbsp;Karšu pārlūks</h1>
-    <div class="container-fluid">
-        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
-        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
-    <div id='map' style='width: 100%; height: 600px;'></div>
-    </div>
-    <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFpbmlzIiwiYSI6ImNrdmZvaW84dzVmeGwydXF3c29lOHpia2MifQ.diOCf07ITIcGj54YuY1Y8g';
-    const map = new mapboxgl.Map({
-    container: 'map', // container ID
-    style: 'mapbox://styles/dainis/ckvi31e507l6r18rs13uxd4vj', // style URL
-    center: [23.76333, 56.69452], // starting position [lng, lat]
-    zoom: 12 // starting zoom
-    });
-    map.addControl(
-new MapboxDirections({
-accessToken: mapboxgl.accessToken
-}),
-'top-left'
-);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <h1 class="display-1">Sveicināti!</h1>
+    <p class="lead">Esam komanda <i class="bi bi-hurricane"></i>&nbsp;Izotopi un piedāvājam Jums aplikācijas <span class="badge bg-success">DIGITAL PATH</span> konceptu. Koncepts ir izstrādāts Atvērto ģeotelpisko datu hakatona skolēniem ietvaros. Komanda pārstāv <a href="https://ozolniekuvsk.lv">Ozolnieku vidusskolu</a>. Esam 12.&nbsp;klases skolnieces Evelīna un Evija. Ar padomu mums palīdz skolotājs Dainis Šantars.</p>
+    <h2>Lielā ideja</h2>
+    <p>COVID-19 pandēmijas laikā, kad notiek mājsēdes, ir parādījušās daudz jaunas, kā arī saasinājušās jau esošas problēmas, kuras savu ietekmi uz cilvēka veselību ir tikai palielinājušas. Tā ir mūsu mentālā veselība, kā arī fiziskais stāvoklis. Liekais svars mēdz ar katru gadu tikai palielināties. Tas veicina veselības problēmas. Mūsu aplikācija nespēs ar visām šīm problēmām tikt galā, bet, musuprāt, tā varētu radīt motivāciju piedalīties fiziskās aktivitātēs un palīdzēt &ldquo;izvēdinās galvu&rdquo;.</p>
+    <p>Aplikācija palīdzēs velosipēdistiem, kuri izlēmuši atpūsties dabā. Te ir iespējams sastādīt maršrutus un arī apskatīties, vai nenāk lietus mākoņi. Fleksošana dabā spridzina!</p>
+    <h2>Realizācija</h2>
+    <h3>Aplikācijas dizains</h3>
+    <p>Aplikācijas dizains varētu būt krāsains un saprotams. Ar to var iepazīties vietnē <a href="https://pr.to/P2U51X">Proto.io</a></p>
+    <a href="https://pr.to/P2U51X"><img src="proto.png" class="rounded mx-auto d-block" alt="Prototips"></a>
+    <h3>Tehniskā puse</h3>
+    <p>Mēs izmēģinājām zīmēt kartes ar Python palīdzību, ģenerēt ceļu tīklus un maršrutus ar osmnx paīdzību, tomēr tas nebija efektīvi.</p>
+    <p>Aplikācijai daudz piemērotāks izrādījās <a href="https://studio.mapbox.com">MapBox</a> serviss, kurš paredzēts dažādu aplikāciju izstrādātājiem. Tur veidotās kartes ir viegli iegulstamas iOS, Android un Web aplikācijās. Viņu bibliotēka maršutu sastādīšanai izrādījās daudz ērtāka par osmnx un Cyclestreets API.</p>
+    <p>Mēs papildinājām karti ar vairākiem slāņiem no pieejamajiem atvērtajiem datiem. Velopastaigām, kā piemērotus izvēlējāmies datus par:
+        <ul>
+            <li>meža ceļiem (<a href="https://www.lvmgeo.lv/dati">LVM GEO datu kopa</a>),</li>
+            <li>atpūtas vietām mežu teritorijās (<a href="https://www.lvmgeo.lv/dati">LVM GEO datu kopa</a>),</li>
+            <li>ūdens ņemšanas vietām (<a href="https://www.lvmgeo.lv/dati">LVM GEO datu kopa</a>),</li>
+            <li>pagastu robežām (<a href="https://www.vzd.gov.lv/lv/pakalpojumi/generalizetas-administrativo-teritoriju-robezas-shp">VZD dati</a>).</li>
+        </ul>
+    </p>
+    <p>Lai izbrauciens būtu patīkamāks, pirms uzsākt kustību (arī tās laikā), lietotājs var noskaidrot, vai aiz devess pamales jau nedrūzmējas tumšu mākoņu bari. Datus mēs iegūstam ar Rainwiever API palīdzību.</p>
+    <h2>Demo</h2>
+    <p><a href="karte.html" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Karte ar maršrutu nospraušanu</a>
+    <a href="meteo.html" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Informācija par lietus mākoņiem</a></p>
+    
 </body>
 </html>
