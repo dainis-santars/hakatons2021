@@ -82,6 +82,11 @@
             }, 2000);
           })
           .catch(console.error);
+      // Tu esi te!
+    const popup = new mapboxgl.Popup({ closeOnClick: false })
+.setLngLat([23.76333, 56.69452])
+.setHTML("Tu esi šeit")
+.addTo(map);
       });
     </script>
     </div>
